@@ -1,6 +1,8 @@
-import React from "react";
+import { useState } from "react";
 
-const SearchBox = ({ search, setSearch, weatherAPI }) => {
+const SearchBox = ({ SetButtonValue }) => {
+  const [search, setSearch] = useState("");
+
   const submitHandler = (e) => {
     e.preventDefault();
   };
@@ -13,7 +15,7 @@ const SearchBox = ({ search, setSearch, weatherAPI }) => {
         type="search"
         placeholder="City"
       />
-      <button onClick={weatherAPI}>Search</button>
+      <button onClick={()=>SetButtonValue(search)}>Search</button>
     </form>
   );
 };
