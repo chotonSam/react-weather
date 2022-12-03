@@ -11,7 +11,10 @@ const MainCard = ({
   speed,
   timezone,
 }) => {
+  let time = new Date().toLocaleTimeString();
+
   const [weatherState, setWeatherState] = useState("");
+  const [ctime, etCtime] = useState(time);
 
   useEffect(() => {
     if (weatherMood) {
@@ -35,7 +38,10 @@ const MainCard = ({
   }, [weatherMood]);
 
   // local time
-
+  setInterval(() => {
+    time = new Date().toLocaleTimeString();
+    etCtime(time);
+  }, 1000);
 
   // sundet time
 
@@ -63,7 +69,7 @@ const MainCard = ({
         </div>
         <div className="time">
           <h2> {new Date().toLocaleDateString()}</h2>
-          <h2>{new Date().toLocaleTimeString()} </h2>
+          <h2>{ctime} </h2>
         </div>
       </div>
 
