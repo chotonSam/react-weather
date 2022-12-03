@@ -7,6 +7,7 @@ function App() {
   const [apiData, setApiData] = useState({});
   const [search, setSearch] = useState("dhaka");
   console.log(apiData);
+
   const weatherAPI = async () => {
     try {
       let url = `https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=92786e203e64a8736c232d0bc13c5d1f`;
@@ -37,7 +38,7 @@ function App() {
     }
   };
   useEffect(() => {
-    weatherAPI("");
+    weatherAPI();
   }, []);
 
   return (
