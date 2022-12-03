@@ -130,6 +130,10 @@ button {
 /* media quary  */
 
 @media only screen and (max-width: 565px) {
+  main {
+    margin-top: 50px;
+  }
+
   .srz {
     width: 100%;
   }

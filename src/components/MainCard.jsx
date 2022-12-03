@@ -9,6 +9,7 @@ const MainCard = ({
   country,
   sunset,
   speed,
+  timezone,
 }) => {
   const [weatherState, setWeatherState] = useState("");
 
@@ -33,9 +34,15 @@ const MainCard = ({
     }
   }, [weatherMood]);
 
+  // local time
+
+
+  // sundet time
+
   let sec = sunset;
   let date = new Date(sec * 1000);
-  let timeStr = `${date.getHours()}:${date.getMinutes()}`;
+  let timeStr = `${date.getHours()}:${date.getUTCMinutes()}`;
+
   return (
     <div className="box">
       {/* top  */}
@@ -56,7 +63,7 @@ const MainCard = ({
         </div>
         <div className="time">
           <h2> {new Date().toLocaleDateString()}</h2>
-          <h2> {new Date().toLocaleTimeString()}</h2>
+          <h2>{new Date().toLocaleTimeString()} </h2>
         </div>
       </div>
 
@@ -68,7 +75,7 @@ const MainCard = ({
             <i className="wi wi-humidity"></i>
           </div>
           <div className="botton-icon-text">
-            <p>{timeStr} PM</p>
+            <p>{timeStr}PM</p>
             <p>Sunset</p>
           </div>
         </div>

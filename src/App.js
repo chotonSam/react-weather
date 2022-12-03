@@ -6,7 +6,7 @@ import SearchBox from "./components/SearchBox";
 function App() {
   const [apiData, setApiData] = useState({});
   const [buttonValue, SetButtonValue] = useState("dhaka");
-
+console.log(apiData)
   useEffect(() => {
     const weatherAPI = async () => {
       try {
@@ -17,7 +17,7 @@ function App() {
 
         const { temp, pressure, humidity } = data.main;
         const { main: weatherMood } = data.weather[0];
-        const { name } = data;
+        const { name, timezone } = data;
         const { country, sunset } = data.sys;
         const { speed } = data.wind;
 
@@ -30,6 +30,7 @@ function App() {
           country,
           sunset,
           speed,
+          timezone,
         };
 
         setApiData(myNewWeatherInfo);
