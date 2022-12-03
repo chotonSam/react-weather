@@ -13,7 +13,7 @@ const SearchBox = ({ SetButtonValue }) => {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         type="search"
-        placeholder="City"
+        placeholder="write your city name..."
       />
       <button onClick={()=>SetButtonValue(search)}>Search</button>
     </form>
